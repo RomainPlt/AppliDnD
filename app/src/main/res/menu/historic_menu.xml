@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/Acolyte"
+        android:title="Acolyte" />
+    <item android:id="@+id/Criminel"
+        android:title="Criminel" />
+    <item android:id="@+id/Ermite"
+        android:title="Ermite" />
+    <item android:id="@+id/Soldat"
+        android:title="Soldat" />
+    <item android:id="@+id/Sauvageon"
+        android:title="Sauvageon" />
+</menu>

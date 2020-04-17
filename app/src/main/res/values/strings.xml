@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DnDApp</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="edit_name">Enter a Name</string>
+    <string name="button_send">Send</string>
+    <string name="text_intro">DONJON &amp; DRAGON</string>
+    <string name="text_choix">Que souhaitez-vous faire ?</string>
+    <string name="button_creer_perso">Créer personnage</string>
+    <string name="button3">Jouer !</string>
+    <string name="button4">Options</string>
+    <string name="buttonRace">Choose a Race</string>
+    <string name="buttonClass">Choose a Class</string>
+    <string name="text_age">How old ?</string>
+    <string name="submit_button">Submit</string>
+    <string name="sex_button">Sex</string>
+    <string name="roll_button">Roll !</string>
+    <string name="text_pv">HP</string>
+    <string name="textRace">~ RACE ~</string>
+    <string name="next_button">Next</string>
+    <string name="textClasse">~ CLASS ~</string>
+    <string name="textPerso">~ CHARACTER ~</string>
+    <string name="textHisto">Votre historique défini votre personnage, il lui donne une identité et des compétences associées.</string>
+
+</resources>

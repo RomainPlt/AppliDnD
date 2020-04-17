@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/Warrior"
+        android:title="Warrior" />
+
+    <item android:id="@+id/Ranger"
+        android:title="Ranger" />
+
+    <item android:id="@+id/Thief"
+        android:title="Thief" />
+
+    <item android:id="@+id/Mage"
+        android:title="Mage" />
+
+    <item android:id="@+id/Clerc"
+        android:title="Clerc" />
+
+    <item android:id="@+id/Barbarian"
+        android:title="Barbarian" />
+</menu>
