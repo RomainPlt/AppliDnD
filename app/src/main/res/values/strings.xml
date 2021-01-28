@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DndApp</string>
+    <string name="title">DUNGEONS AND DRAGONS</string>
+    <string name="playButton">PLAY</string>
+    <string name="createButton">CREATE CHARACTER</string>
+    <string name="parametersButton">PARAMETERS</string>
+    <string name="nextButton">NEXT</string>
+    <string name="deleteButton">DELETE CHARACTER</string>
+
+</resources>
