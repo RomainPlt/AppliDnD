@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void CreatePerso(View view){
+    public void CreatePerso(View v){
         Intent intent = new Intent(this, CreateCharacter.class);
         startActivity(intent);
 

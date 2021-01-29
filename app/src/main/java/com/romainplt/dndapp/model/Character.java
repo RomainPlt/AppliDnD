@@ -16,14 +16,30 @@ public class Character {
     private int xp;
     private Description[] description; //Hair skin eyes color, height and weight, age, sex, aligment
     private Background background;
-    private Characteristics[] characteristics;
+    private Characteristics characteristics;
     private Skills[] skills;
     private Equipment[] equipment;
     private SavingThrows[] savingThrows;
     private Attack[] attacks;
     private Money[] money;
+    private int maximalWeight;
 
 
+    public Money[] getMoney() {
+        return money;
+    }
+
+    public void setMoney(Money[] money) {
+        this.money = money;
+    }
+
+    public int getMaximalWeight() {
+        return maximalWeight;
+    }
+
+    public void setMaximalWeight(int maximalWeight) {
+        this.maximalWeight = maximalWeight;
+    }
 
     public String getName() {
         return name;
@@ -121,12 +137,47 @@ public class Character {
         this.background = background;
     }
 
-    public Characteristics[] getCharacteristics() {
+    public Characteristics getCharacteristics() {
         return characteristics;
     }
 
-    public void setCharacteristics(Characteristics[] characteristics) {
+    public void setCharacteristics(Characteristics characteristics) {
         this.characteristics = characteristics;
+        switch (characteristics.getStrength()){
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+                setMaximalWeight(300);
+
+            case 7:
+            case 8:
+            case 9:
+                setMaximalWeight(400);
+            case 10:
+            case 11:
+            case 12:
+                setMaximalWeight(450);
+            case 13:
+                setMaximalWeight(500);
+            case 14:
+            case 15:
+                setMaximalWeight(550);
+            case 16:
+                setMaximalWeight(600);
+            case 17:
+                setMaximalWeight(650);
+            case 18:
+                setMaximalWeight(700);
+            case 19:
+            case 20:
+                setMaximalWeight(800);
+            case 21:
+            case 22:
+                setMaximalWeight(900);
+        } //set maximalWeight
+
+
     }
 
     public Skills[] getSkills() {
@@ -160,4 +211,7 @@ public class Character {
     public void setAttacks(Attack[] attacks) {
         this.attacks = attacks;
     }
+
+
+
 }

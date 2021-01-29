@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">DndApp</string>
-    <string name="title">DUNGEONS AND DRAGONS</string>
+    <string name="title"> <b>DUNGEONS AND DRAGONS </b></string>
     <string name="playButton">PLAY</string>
     <string name="createButton">CREATE CHARACTER</string>
     <string name="parametersButton">PARAMETERS</string>
     <string name="nextButton">NEXT</string>
+    <string name="previousButton">PREVIOUS</string>
     <string name="deleteButton">DELETE CHARACTER</string>
+    <string name="plzKillMeButton">KILL ME
+        <font face="sans_serif" color="ff0000"></font>
+    </string>
 
 </resources>
