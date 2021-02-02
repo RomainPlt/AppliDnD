@@ -2,7 +2,7 @@ package com.romainplt.dndapp.model;
 
 import android.graphics.Color;
 
-public class Character {
+public class Advanturer {
 
     private String name;
     private String player;

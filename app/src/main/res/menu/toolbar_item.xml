@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/go_to_race"
+        android:orderInCategory="100"
+        android:title="@string/race"
+       />
+    <item
+        android:id="@+id/go_to_class"
+        android:orderInCategory="100"
+        android:title="@string/classe"
+        />
+    <item
+        android:id="@+id/go_to_details"
+        android:orderInCategory="100"
+        android:title="@string/details"
+       />
+    <item
+        android:id="@+id/go_to_physical"
+        android:orderInCategory="100"
+        android:title="@string/physical"
+        />
+    <item
+        android:id="@+id/go_to_background"
+        android:orderInCategory="100"
+        android:title="@string/background"
+         />
+    <item
+        android:id="@+id/go_to_skills"
+        android:orderInCategory="100"
+        android:title="@string/skills"
+      />
+    <item
+        android:id="@+id/go_to_characteristics"
+        android:orderInCategory="100"
+        android:title="@string/characteristics"
+     />
+
+
+
+
+
+</menu>

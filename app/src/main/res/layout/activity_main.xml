@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="6dp" />
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -28,11 +41,11 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif"
         android:text="@string/playButton"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#BA0303"
         app:layout_constraintBottom_toTopOf="@+id/createButton"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <Button
@@ -44,11 +57,11 @@
         android:fontFamily="sans-serif"
         android:onClick="CreatePerso"
         android:text="@string/createButton"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#BA0303"
         app:layout_constraintBottom_toTopOf="@+id/paramButton"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playButton" />
 
     <Button
@@ -58,10 +71,10 @@
         android:layout_marginTop="24dp"
         android:fontFamily="sans-serif"
         android:text="@string/parametersButton"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#BA0303"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createButton" />
 
     <Button
@@ -71,16 +84,10 @@
         android:layout_marginTop="24dp"
         android:fontFamily="sans-serif"
         android:text="@string/deleteButton"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#BA0303"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paramButton" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

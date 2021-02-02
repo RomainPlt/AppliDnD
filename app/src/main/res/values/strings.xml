@@ -1,14 +1,29 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">DndApp</string>
-    <string name="title"> <b>DUNGEONS AND DRAGONS </b></string>
+    <string name="title"> <b>D-ANDY </b></string>
     <string name="playButton">PLAY</string>
     <string name="createButton">CREATE CHARACTER</string>
     <string name="parametersButton">PARAMETERS</string>
-    <string name="nextButton">NEXT</string>
+    <string name="nextButton"> NEXT </string>
     <string name="previousButton">PREVIOUS</string>
     <string name="deleteButton">DELETE CHARACTER</string>
     <string name="plzKillMeButton">KILL ME
         <font face="sans_serif" color="ff0000"></font>
     </string>
+    <string name="welcomeCreationText">Welcome to the <b>Character Creation</b> board! You will here have the opportunity to choose
+    the race, class, sex and name of your character, but also things like his age, or his eye color ! At the end of this
+    different steps, you will throw the dice and give your character some skills and abilities.
+    Ready ?</string>
+    <string name="letsGoButton" >LET S GO !</string>
+    <string name="race" >RACE</string>
+    <string name="classe" >CLASS</string>
+    <string name="details" >DETAILS</string>
+    <string name="physical" >PHYSICAL TRAIT</string>
+    <string name="background" >BACKGROUND</string>
+    <string name="skills" >SKILLS</string>
+    <string name="characteristics" >CHARACTERISTICS</string>
+    <string name="helpRace" >Alors c est l histoire d une pute a cinq euro</string>
+    <string name="ok" >OK</string>
+    <string name="return_button">RETURN</string>
 
 </resources>

@@ -7,74 +7,87 @@
     android:layout_height="match_parent">
 
     <RadioGroup
-        android:id="@+id/raceRadioGroup1"
-        android:layout_width="94dp"
-        android:layout_height="247dp"
+        android:id="@+id/classRadioGroup1"
+        android:layout_width="115dp"
+        android:layout_height="209dp"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintBottom_toTopOf="@+id/prevButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton_Human"
+            android:id="@+id/radioButton_Warrior"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Human" />
+            android:text="Warrior" />
 
         <RadioButton
-            android:id="@+id/radioButton_Dwarf"
+            android:id="@+id/radioButton_Thief"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Dwarf" />
+            android:text="Thief" />
 
         <RadioButton
-            android:id="@+id/radioButton_Elf"
+            android:id="@+id/radioButton_Sorcerer"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Elf" />
+            android:text="Sorcerer" />
 
         <RadioButton
-            android:id="@+id/radioButton_Gnome"
+            android:id="@+id/radioButton_Illusionist"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Gnome" />
+            android:text="Illusionist" />
 
         <RadioButton
-            android:id="@+id/radioButton_Half_Orc"
+            android:id="@+id/radioButton_Assassin"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Half-Orc" />
-
-
+            android:text="Assassin" />
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/raceRadioGroup2"
-        android:layout_width="94dp"
-        android:layout_height="247dp"
-        android:layout_marginTop="104dp"
+        android:id="@+id/classRadioGroup2"
+        android:layout_width="132dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton_Half_Elf"
+            android:id="@+id/radioButton_Monk"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Half-Elf" />
+            android:text="Monk" />
 
         <RadioButton
-            android:id="@+id/radioButton_Tieflin"
+            android:id="@+id/radioButton_Ranger"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Tieflin" />
+            android:text="Ranger" />
 
+        <RadioButton
+            android:id="@+id/radioButton_Priest"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Priest" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Druid"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Druid" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Barbarian"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Barbarian" />
     </RadioGroup>
 
     <ImageButton
@@ -83,10 +96,11 @@
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:foregroundGravity="center"
         android:src="@drawable/leftwhite"
         android:textColor="#FFFFFF"
         app:backgroundTint="#BA0303"
+        android:layout_marginBottom="0dp"
+        android:text="@string/previousButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -95,34 +109,34 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginLeft="32dp"
-        android:foregroundGravity="center"
+        android:layout_marginRight="32dp"
         android:src="@drawable/rightwhite"
         android:textColor="#FFFFFF"
         app:backgroundTint="#BA0303"
+        android:layout_marginBottom="0dp"
+        android:text="@string/nextButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="32dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/quetionButton"
+        android:id="@+id/questionButton"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
         android:layout_width="46dp"
         android:layout_height="45dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="#BA0303"
         android:text="?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/taxtViewRace"
+        android:id="@+id/textViewClass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/race"
+        android:text="@string/classe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
