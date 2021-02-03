@@ -1,7 +1,9 @@
 package com.romainplt.dndapp.ui.create;
 
 import android.content.ClipData;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,7 +32,7 @@ import com.romainplt.dndapp.model.Race;
 
 import java.util.List;
 
-public class CreateCharacter extends AppCompatActivity implements RaceFragment.SendRace{
+public class CreateCharacter extends AppCompatActivity implements RaceFragment.SendRace, WelcomeLayout.Letsgo, ClassFragment.SendClass {
 
     public CreateCharacter(){
         super(R.layout.create_character);
@@ -47,6 +49,17 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
     private ArrayAdapter<CharSequence> mArrayAdapter;
 
     private MyViewModel viewModel;
+
+    private TextView raceTextView;
+    private Button finishButton;
+    private Button characButton;
+    private Button skillButton;
+    private Button detailButton;
+    private TextView nameView;
+    private TextView classView;
+    private TextView godView;
+    private TextView backgroundView;
+
 
 
     @Override
@@ -66,11 +79,16 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
         myToolbar.setNavigationIcon(R.drawable.baseline_arrow_back_black_18dp);
         myToolbar.setOverflowIcon(ContextCompat.getDrawable(this, R.drawable.baseline_menu_black_18dp));
 
-        viewModel = new ViewModelProvider(this).get(MyViewModel.class);
-        viewModel.getRace().observe(this, item -> {
+        raceTextView = findViewById(R.id.raceView);
 
-            // Perform an action with the latest item data
-        });
+        finishButton = findViewById(R.id.finalButton);
+        characButton = findViewById(R.id.characteristicsButton);
+        skillButton = findViewById(R.id.buttonSkills);
+        detailButton = findViewById(R.id.buttonDetails);
+        nameView = findViewById(R.id.nameView);
+        classView = findViewById(R.id.classView);
+        godView = findViewById(R.id.godView);
+        backgroundView = findViewById(R.id.backgroundView);
 
 
 
@@ -103,9 +121,35 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
 
 
 
+
     @Override
     public void sendData(Race race) {
+        raceTextView.setText(race.getRaceName());
+        raceTextView.setAllCaps(true);
+        raceTextView.setTextColor(Color.parseColor("#BA0303"));
         advanturer.setRace(race);
+
     }
 
+    @Override
+    public void sendOK() {
+        raceTextView.setVisibility(View.VISIBLE);
+        finishButton.setVisibility(View.VISIBLE);
+        characButton.setVisibility(View.VISIBLE);
+        skillButton.setVisibility(View.VISIBLE);
+        detailButton.setVisibility(View.VISIBLE);
+        nameView.setVisibility(View.VISIBLE);
+        classView.setVisibility(View.VISIBLE);
+        godView.setVisibility(View.VISIBLE);
+        backgroundView.setVisibility(View.VISIBLE);
+
+    }
+
+    @Override
+    public void sendData(Classe classe) {
+        classView.setText(classe.getClasseName());
+        classView.setAllCaps(true);
+        classView.setTextColor(Color.parseColor("#BA0303"));
+        advanturer.setClasse(classe);
+    }
 }

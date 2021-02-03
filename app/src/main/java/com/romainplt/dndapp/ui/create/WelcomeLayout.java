@@ -1,5 +1,6 @@
 package com.romainplt.dndapp.ui.create;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
@@ -15,9 +16,12 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.romainplt.dndapp.R;
+import com.romainplt.dndapp.model.Race;
 
 
 public class WelcomeLayout extends Fragment {
+
+    private Letsgo go;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
@@ -28,6 +32,8 @@ public class WelcomeLayout extends Fragment {
             @Override
             public void onClick(View v)
             {
+                go.sendOK();
+
                 FragmentTransaction ft = getParentFragmentManager().beginTransaction();
                 ft.replace(R.id.createCharacterLayout, new RaceFragment());
                 ft.commit();
@@ -40,4 +46,18 @@ public class WelcomeLayout extends Fragment {
 
     }
 
+    interface Letsgo {
+        void sendOK();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        try {
+            go = (Letsgo) getActivity();
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Error in retrieving data. Please try again");
+        }
+    }
 }

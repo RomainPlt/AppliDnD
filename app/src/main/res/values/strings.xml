@@ -26,4 +26,20 @@
     <string name="ok" >OK</string>
     <string name="return_button">RETURN</string>
 
+
+    <string name="finished" >FINISHED</string>
+    <string name="name" >NAME</string>
+    <string name="sex" >SEX</string>
+    <string name="god" >GOD</string>
+    <string name="age" >AGE</string>
+    <string name="alignment" >ALIGNMENT</string>
+    <string name="eyeColor" >EYE COLOR</string>
+    <string name="skinColor" >SKIN COLOR</string>
+    <string name="hairColor" >HAIR COLOR</string>
+    <string name="height" >HEIGHT</string>
+    <string name="weight" >WEIGHT</string>
+
+
+
+
 </resources>

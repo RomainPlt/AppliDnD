@@ -22,7 +22,7 @@ import com.romainplt.dndapp.R;
 import com.romainplt.dndapp.model.Classe;
 import com.romainplt.dndapp.model.Race;
 
-public class ClassFragment extends Fragment {
+public class DetailsFragment extends Fragment {
 
     private Character character;
     private Race race;

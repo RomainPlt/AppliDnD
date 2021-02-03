@@ -38,7 +38,7 @@ import java.util.List;
 
 public class RaceFragment extends Fragment {
 
-    SendRace SR;
+    private SendRace SR;
 
     private RadioGroup rg1;
     private RadioGroup rg2;
@@ -56,8 +56,10 @@ public class RaceFragment extends Fragment {
     private RadioButton checkedRadioButton;
     PopupWindow popUp;
 
-    private MyViewModel viewModel;
-    private Race race;
+    private Race race = new Race();
+    private Button okButton;
+
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
@@ -67,10 +69,7 @@ public class RaceFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
 
-        Race race = new Race();
-
         popUp = new PopupWindow();
-        viewModel = new ViewModelProvider(requireActivity()).get(MyViewModel.class);
         nextButton = (ImageButton) view.findViewById(R.id.nextButton);
         nextButton.setOnClickListener(new View.OnClickListener()
         {
@@ -121,21 +120,20 @@ public class RaceFragment extends Fragment {
         rg2 = (RadioGroup) getView().findViewById(R.id.raceRadioGroup2);
         rg1.clearCheck(); // this is so we can start fresh, with no selection on both RadioGroups
         rg2.clearCheck();
-
-
         rg1.setOnCheckedChangeListener(listener1);
         rg2.setOnCheckedChangeListener(listener2);
-
-        int chkId1 = rg1.getCheckedRadioButtonId();
-        int chkId2 = rg2.getCheckedRadioButtonId();
-        int realCheck = chkId1 == -1 ? chkId2 : chkId1;
-
-        SR.sendData(race);
+        okButton = getView().findViewById(R.id.okButton);
+        okButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                SR.sendData(race);
+            }
+        });
 
 
     }
-
-
 
 
     interface SendRace {
@@ -154,90 +152,144 @@ public class RaceFragment extends Fragment {
     }
 
 
+
     private RadioGroup.OnCheckedChangeListener listener1 = new RadioGroup.OnCheckedChangeListener() {
 
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                if (checkedId != -1) {
-                    rg2.setOnCheckedChangeListener(null); // remove the listener before clearing so we don't throw that stackoverflow exception(like Vladimir Volodin pointed out)
-                    rg2.clearCheck(); // clear the second RadioGroup!
-                    rg2.setOnCheckedChangeListener(listener2); //reset the listener
-
-                }
-                switch (checkedId){
-
-                    case R.id.radioButton_Half_Orc:
-                        //race.setRaceName("Half-Orc");
-                        race.setRaceName("Half-Orc");
-                        race.setHealthPointAdjustment(0);
-                        String[] hOrcLanguage = {"Common", "Orc", "Gobelin"};
-                        race.setLanguages(hOrcLanguage);
-
-                        break;
-                    case R.id.radioButton_Tieflin:
-                        //race.setRaceName("Tieflin");
-                        race.setRaceName("Tieflin");
-                        race.setHealthPointAdjustment(0);
-                        String[] tieflinfLanguage = {"Common", "Tieflin"};
-                        race.setLanguages(tieflinfLanguage);
-                        break;
-
-                }
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            if (checkedId != -1) {
+                rg2.setOnCheckedChangeListener(null); // remove the listener before clearing so we don't throw that stackoverflow exception(like Vladimir Volodin pointed out)
+                rg2.clearCheck(); // clear the second RadioGroup!
+                rg2.setOnCheckedChangeListener(listener2); //reset the listener
             }
-        };
 
-        private RadioGroup.OnCheckedChangeListener listener2 = new RadioGroup.OnCheckedChangeListener() {
+            switch (checkedId) {
 
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId != -1) {
-                    rg1.setOnCheckedChangeListener(null);
-                    rg1.clearCheck();
-                    rg1.setOnCheckedChangeListener(listener1);
-                }
-                switch (checkedId) {
-                    case R.id.radioButton_Human:
-                        //race.setRaceName("Human");
-                        race.setRaceName("Human");
-                        race.setHealthPointAdjustment(0);
-                        String[] humanLanguage = {"Common"};
-                        race.setLanguages(humanLanguage);
+                case R.id.radioButton_Half_Orc:
+                    //race.setRaceName("Half-Orc");
+                    race.setRaceName("Half-Orc");
+                    race.setHealthPointAdjustment(0);
+                    String[] hOrcLanguage = {"Common", "Orc", "Gobelin"};
+                    race.setLanguages(hOrcLanguage);
 
-                        break;
-                    case R.id.radioButton_Dwarf:
-                        //race.setRaceName("Dwarf");
-                        race.setRaceName("Dwarf");
-                        race.setHealthPointAdjustment(0);
-                        String[] dwarfLanguage = {"Common", "Dwarf"};
-                        race.setLanguages(dwarfLanguage);
-                        break;
-                    case R.id.radioButton_Elf:
-                        //race.setRaceName("Elf");
-                        race.setRaceName("Elf");
-                        race.setHealthPointAdjustment(0);
-                        String[] elfLanguage = {"Common", "Elf"};
-                        race.setLanguages(elfLanguage);
-                        break;
-                    case R.id.radioButton_Half_Elf:
-                        //race.setRaceName("Half-Elf");
-                        race.setRaceName("Half-Elf");
-                        race.setHealthPointAdjustment(0);
-                        String[] hElfLanguage = {"Common", "Elf"};
-                        race.setLanguages(hElfLanguage);
-                        break;
-                    case R.id.radioButton_Gnome:
-                        //race.setRaceName("Gnome");
-                        race.setRaceName("Gnome");
-                        race.setHealthPointAdjustment(0);
-                        String[] gnomeLanguage = {"Common", "Dwarf", "Gnome"};
-                        race.setLanguages(gnomeLanguage);
-                        break;
+                    break;
+                case R.id.radioButton_Tieflin:
+                    //race.setRaceName("Tieflin");
+                    race.setRaceName("Tieflin");
+                    race.setHealthPointAdjustment(0);
+                    String[] tieflinfLanguage = {"Common", "Tieflin"};
+                    race.setLanguages(tieflinfLanguage);
+                    break;
+                case R.id.radioButton_Human:
+                    //race.setRaceName("Human");
+                    race.setRaceName("Human");
+                    race.setHealthPointAdjustment(0);
+                    String[] humanLanguage = {"Common"};
+                    race.setLanguages(humanLanguage);
 
+                    break;
+                case R.id.radioButton_Dwarf:
+                    //race.setRaceName("Dwarf");
+                    race.setRaceName("Dwarf");
+                    race.setHealthPointAdjustment(0);
+                    String[] dwarfLanguage = {"Common", "Dwarf"};
+                    race.setLanguages(dwarfLanguage);
+                    break;
+                case R.id.radioButton_Elf:
+                    //race.setRaceName("Elf");
+                    race.setRaceName("Elf");
+                    race.setHealthPointAdjustment(0);
+                    String[] elfLanguage = {"Common", "Elf"};
+                    race.setLanguages(elfLanguage);
+                    break;
+                case R.id.radioButton_Half_Elf:
+                    //race.setRaceName("Half-Elf");
+                    race.setRaceName("Half-Elf");
+                    race.setHealthPointAdjustment(0);
+                    String[] hElfLanguage = {"Common", "Elf"};
+                    race.setLanguages(hElfLanguage);
+                    break;
+                case R.id.radioButton_Gnome:
+                    //race.setRaceName("Gnome");
+                    race.setRaceName("Gnome");
+                    race.setHealthPointAdjustment(0);
+                    String[] gnomeLanguage = {"Common", "Dwarf", "Gnome"};
+                    race.setLanguages(gnomeLanguage);
+                    break;
 
-                }
             }
-        };
+
+        }
+    };
+
+    private RadioGroup.OnCheckedChangeListener listener2 = new RadioGroup.OnCheckedChangeListener() {
+
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            if (checkedId != -1) {
+                rg1.setOnCheckedChangeListener(null);
+                rg1.clearCheck();
+                rg1.setOnCheckedChangeListener(listener1);
+            }
+
+            switch (checkedId) {
+
+                case R.id.radioButton_Half_Orc:
+                    //race.setRaceName("Half-Orc");
+                    race.setRaceName("Half-Orc");
+                    race.setHealthPointAdjustment(0);
+                    String[] hOrcLanguage = {"Common", "Orc", "Gobelin"};
+                    race.setLanguages(hOrcLanguage);
+
+                    break;
+                case R.id.radioButton_Tieflin:
+                    //race.setRaceName("Tieflin");
+                    race.setRaceName("Tieflin");
+                    race.setHealthPointAdjustment(0);
+                    String[] tieflinfLanguage = {"Common", "Tieflin"};
+                    race.setLanguages(tieflinfLanguage);
+                    break;
+                case R.id.radioButton_Human:
+                    //race.setRaceName("Human");
+                    race.setRaceName("Human");
+                    race.setHealthPointAdjustment(0);
+                    String[] humanLanguage = {"Common"};
+                    race.setLanguages(humanLanguage);
+
+                    break;
+                case R.id.radioButton_Dwarf:
+                    //race.setRaceName("Dwarf");
+                    race.setRaceName("Dwarf");
+                    race.setHealthPointAdjustment(0);
+                    String[] dwarfLanguage = {"Common", "Dwarf"};
+                    race.setLanguages(dwarfLanguage);
+                    break;
+                case R.id.radioButton_Elf:
+                    //race.setRaceName("Elf");
+                    race.setRaceName("Elf");
+                    race.setHealthPointAdjustment(0);
+                    String[] elfLanguage = {"Common", "Elf"};
+                    race.setLanguages(elfLanguage);
+                    break;
+                case R.id.radioButton_Half_Elf:
+                    //race.setRaceName("Half-Elf");
+                    race.setRaceName("Half-Elf");
+                    race.setHealthPointAdjustment(0);
+                    String[] hElfLanguage = {"Common", "Elf"};
+                    race.setLanguages(hElfLanguage);
+                    break;
+                case R.id.radioButton_Gnome:
+                    //race.setRaceName("Gnome");
+                    race.setRaceName("Gnome");
+                    race.setHealthPointAdjustment(0);
+                    String[] gnomeLanguage = {"Common", "Dwarf", "Gnome"};
+                    race.setLanguages(gnomeLanguage);
+                    break;
+
+            }
+        }
+    };
+
 
 
 }
