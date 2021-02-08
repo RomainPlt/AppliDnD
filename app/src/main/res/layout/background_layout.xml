@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageButton
+        android:id="@+id/prevButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="16dp"
+        android:foregroundGravity="center"
+        android:src="@drawable/leftwhite"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
+        android:foregroundGravity="center"
+        android:src="@drawable/rightwhite"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/quetionButton"
+        android:layout_width="46dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="?"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViexBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:enabled="false"
+        android:text="@string/ok"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextButton"
+        app:layout_constraintStart_toEndOf="@+id/prevButton" />
+
+
+    <RadioGroup
+        android:id="@+id/backgroundRadioGroup1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quetionButton">
+
+        <RadioButton
+            android:id="@+id/radioButton_Acolyte"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Acolyte" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Crafter"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Guild Crafter" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Artist"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Artist" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Charlatan"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Charlatan" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Criminal"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Criminal" />
+
+        <RadioButton
+            android:id="@+id/radioButton_StreetBoi"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Street Boy" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Soldier"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Soldier" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/backgroundRadioGroup2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/quetionButton">
+
+        <RadioButton
+            android:id="@+id/radioButton_Ermit"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Ermit" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Hero"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Hero" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Sailor"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Sailor" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Noble"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Noble" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Wise"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Wise" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Wildling"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Wildling" />
+
+        <RadioButton
+            android:id="@+id/radioButton_ChurchBoi"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Church Boy" />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

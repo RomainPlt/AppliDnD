@@ -1,19 +1,14 @@
 package com.romainplt.dndapp.ui.create;
 
 import android.app.AlertDialog;
-import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -21,20 +16,9 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.romainplt.dndapp.R;
-import com.romainplt.dndapp.model.Advanturer;
-import com.romainplt.dndapp.model.HelpDialog;
-import com.romainplt.dndapp.model.MyViewModel;
 import com.romainplt.dndapp.model.Race;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
 public class RaceFragment extends Fragment {
 
@@ -89,7 +73,7 @@ public class RaceFragment extends Fragment {
             public void onClick(View v)
             {
                 FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-                ft.replace(R.id.createCharacterLayout, new ClassFragment());
+                ft.replace(R.id.createCharacterLayout, new BackgroundFragment());
                 ft.commit();
             }
         });
@@ -161,6 +145,8 @@ public class RaceFragment extends Fragment {
                 rg2.setOnCheckedChangeListener(null); // remove the listener before clearing so we don't throw that stackoverflow exception(like Vladimir Volodin pointed out)
                 rg2.clearCheck(); // clear the second RadioGroup!
                 rg2.setOnCheckedChangeListener(listener2); //reset the listener
+                okButton = getView().findViewById(R.id.okButton);
+                okButton.setEnabled(true);
             }
 
             switch (checkedId) {
@@ -230,6 +216,8 @@ public class RaceFragment extends Fragment {
                 rg1.setOnCheckedChangeListener(null);
                 rg1.clearCheck();
                 rg1.setOnCheckedChangeListener(listener1);
+                okButton = getView().findViewById(R.id.okButton);
+                okButton.setEnabled(true);
             }
 
             switch (checkedId) {

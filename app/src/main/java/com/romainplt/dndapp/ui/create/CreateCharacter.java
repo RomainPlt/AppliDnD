@@ -1,9 +1,9 @@
 package com.romainplt.dndapp.ui.create;
 
-import android.content.ClipData;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,33 +12,28 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.romainplt.dndapp.R;
-import com.romainplt.dndapp.model.Advanturer;
+import com.romainplt.dndapp.model.Adventurer;
+import com.romainplt.dndapp.model.Background;
 import com.romainplt.dndapp.model.Classe;
+import com.romainplt.dndapp.model.Description;
 import com.romainplt.dndapp.model.MyViewModel;
 import com.romainplt.dndapp.model.Race;
 
 import java.util.List;
 
-public class CreateCharacter extends AppCompatActivity implements RaceFragment.SendRace, WelcomeLayout.Letsgo, ClassFragment.SendClass {
+public class CreateCharacter extends AppCompatActivity implements RaceFragment.SendRace, WelcomeLayout.Letsgo, ClassFragment.SendClass, DetailsFragment.SendDescription, BackgroundFragment.SendBackground {
 
     public CreateCharacter(){
         super(R.layout.create_character);
     }
 
-    private Advanturer advanturer = new Advanturer();
+    private Adventurer advanturer = new Adventurer();
 
     private Boolean letsGo;
     private Button next;
@@ -91,6 +86,41 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
         backgroundView = findViewById(R.id.backgroundView);
 
 
+        detailButton.setOnClickListener(new View.OnClickListener()
+
+        {
+            @Override
+            public void onClick(View v)
+            {
+                AlertDialog alertDialog = new AlertDialog.Builder(CreateCharacter.this).create(); //Read Update
+                alertDialog.setTitle(R.string.details);
+                alertDialog.setMessage("\n"
+                + "Age : " + advanturer.getDescription().getAge() + " \n"
+                + "Sex : " + advanturer.getDescription().getSex() + " \n"
+                + "Eye color : " + advanturer.getDescription().getEyeColor() + " \n"
+                + "Hair color : " + advanturer.getDescription().getHairColor() + " \n"
+                + "Skin color : " + advanturer.getDescription().getSkinColor() + " \n"
+                + "Height : " + advanturer.getDescription().getHeight() + " \n"
+                + "Weight : " + advanturer.getDescription().getWeight() + " \n"
+                + "Alignment : " + advanturer.getDescription().getAlignment());
+
+
+
+
+
+                alertDialog.setButton("OK !", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // here you can add functions
+                    }
+                });
+
+                alertDialog.show();
+
+            }
+
+
+        });
+
 
     }
 
@@ -124,10 +154,13 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
 
     @Override
     public void sendData(Race race) {
-        raceTextView.setText(race.getRaceName());
-        raceTextView.setAllCaps(true);
-        raceTextView.setTextColor(Color.parseColor("#BA0303"));
-        advanturer.setRace(race);
+        if (race != null){
+            raceTextView.setText(race.getRaceName());
+            raceTextView.setAllCaps(true);
+            raceTextView.setTextColor(Color.parseColor("#BA0303"));
+            advanturer.setRace(race);
+        }
+
 
     }
 
@@ -147,9 +180,29 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
 
     @Override
     public void sendData(Classe classe) {
-        classView.setText(classe.getClasseName());
-        classView.setAllCaps(true);
-        classView.setTextColor(Color.parseColor("#BA0303"));
-        advanturer.setClasse(classe);
+        if (classe != null) {
+            classView.setText(classe.getClasseName());
+            classView.setAllCaps(true);
+            classView.setTextColor(Color.parseColor("#BA0303"));
+            advanturer.setClasse(classe);
+        }
+    }
+
+    @Override
+    public void sendData(Description description) {
+        detailButton.setTextColor(Color.parseColor("#BA0303"));
+        detailButton.setEnabled(true);
+        advanturer.setDescription(description);
+
+    }
+
+    @Override
+    public void sendData(Background background) {
+        if (background != null){
+            backgroundView.setText(background.getName());
+            backgroundView.setAllCaps(true);
+            backgroundView.setTextColor(Color.parseColor("#BA0303"));
+            advanturer.setBackground(background);
+        }
     }
 }

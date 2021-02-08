@@ -67,7 +67,7 @@ public class ClassFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-                ft.replace(R.id.createCharacterLayout, new RaceFragment());
+                ft.replace(R.id.createCharacterLayout, new DetailsFragment());
                 ft.commit();
             }
         });
@@ -147,6 +147,8 @@ public class ClassFragment extends Fragment {
                 rg2.setOnCheckedChangeListener(null); // remove the listener before clearing so we don't throw that stackoverflow exception(like Vladimir Volodin pointed out)
                 rg2.clearCheck(); // clear the second RadioGroup!
                 rg2.setOnCheckedChangeListener(listener2); //reset the listener
+                okButton = getView().findViewById(R.id.okButton);
+                okButton.setEnabled(true);
             }
 
             switch (checkedId) {
@@ -216,6 +218,8 @@ public class ClassFragment extends Fragment {
                 rg1.setOnCheckedChangeListener(null);
                 rg1.clearCheck();
                 rg1.setOnCheckedChangeListener(listener1);
+                okButton = getView().findViewById(R.id.okButton);
+                okButton.setEnabled(true);
             }
 
             switch (checkedId) {

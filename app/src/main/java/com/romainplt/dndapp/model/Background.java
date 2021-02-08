@@ -4,7 +4,7 @@ public class Background {
 
     private String Name;
     private String description;
-    private Skills[] backgroundSkills;
+    private Skills backgroundSkills;
     private String[] backgroundLanguages;
     private Equipment[] backgroundEquipment;
 
@@ -24,11 +24,11 @@ public class Background {
         this.description = description;
     }
 
-    public Skills[] getBackgroundSkills() {
+    public Skills getBackgroundSkills() {
         return backgroundSkills;
     }
 
-    public void setBackgroundSkills(Skills[] backgroundSkills) {
+    public void setBackgroundSkills(Skills backgroundSkills) {
         this.backgroundSkills = backgroundSkills;
     }
 

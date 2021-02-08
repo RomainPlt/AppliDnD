@@ -5,8 +5,35 @@ public class Description {
     private String hairColor;
     private String eyeColor;
     private String skinColor;
-    private int age;
+    private String age;
     private String sex;
+    private String alignment;
+    private String weight;
+    private String height;
+
+    public String getAlignment() {
+        return alignment;
+    }
+
+    public void setAlignment(String alignment) {
+        this.alignment = alignment;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
 
     public String getHairColor() {
         return hairColor;
@@ -32,11 +59,11 @@ public class Description {
         this.skinColor = skinColor;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

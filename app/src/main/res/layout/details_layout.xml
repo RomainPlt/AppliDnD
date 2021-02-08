@@ -36,14 +36,14 @@
 
     <Button
         android:id="@+id/questionButton"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="#BA0303"
         android:layout_width="46dp"
         android:layout_height="45dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="?"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,15 +70,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/radioSex"
+        android:id="@+id/radioGroupSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDetails">
 
         <RadioButton
+            android:id="@+id/female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Female">
@@ -86,6 +90,7 @@
         </RadioButton>
 
         <RadioButton
+            android:id="@+id/male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Male">
@@ -96,55 +101,218 @@
 
     <SeekBar
         android:id="@+id/ageBar"
-        android:layout_width="274dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioSex" />
+        android:layout_width="121dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/ageView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetails" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="185dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/inputHair"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/LG"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageBar">
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupSex">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:hint="Hair Color" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="198dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/inputSkin"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/NG"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/inputHair">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:hint="Skin Color" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="197dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/inputEye"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/CG"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/inputSkin">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:hint="Eye Color" />
     </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TextView
+        android:id="@+id/alignmentView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/alignment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/inputSkin"
+        app:layout_constraintTop_toBottomOf="@+id/ageBar" />
+
+    <TextView
+        android:id="@+id/ageView"
+        android:layout_width="78dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/age"
+        app:layout_constraintBottom_toTopOf="@+id/inputHair"
+        app:layout_constraintStart_toEndOf="@+id/radioGroupSex"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDetails"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <SeekBar
+        android:id="@+id/heightBar"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CN" />
+
+    <SeekBar
+        android:id="@+id/weightBar"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightBar" />
+
+    <TextView
+        android:id="@+id/heightView"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="@string/height"
+        app:layout_constraintEnd_toStartOf="@+id/heightBar"
+        app:layout_constraintTop_toBottomOf="@+id/CE" />
+
+    <TextView
+        android:id="@+id/weightView"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="@string/weight"
+        app:layout_constraintEnd_toStartOf="@+id/weightBar"
+        app:layout_constraintTop_toBottomOf="@+id/heightView" />
+
+    <Button
+        android:id="@+id/LG"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:text="LG"
+        android:textColor="#ED0000"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/LN"
+        app:layout_constraintTop_toBottomOf="@+id/alignmentView" />
+
+    <Button
+        android:id="@+id/LN"
+        android:textColor="#FF4141"
+        app:backgroundTint="#FFD1D1"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:text="LN"
+        app:layout_constraintEnd_toStartOf="@+id/LE"
+        app:layout_constraintTop_toBottomOf="@+id/alignmentView" />
+
+    <Button
+        android:id="@+id/LE"
+        android:textColor="#F8DCDC"
+        app:backgroundTint="#FA7474"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="LE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alignmentView" />
+
+    <Button
+        android:id="@+id/NG"
+        android:textColor="#FF4141"
+        app:backgroundTint="#FFD1D1"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:text="NG"
+        app:layout_constraintEnd_toStartOf="@+id/NN"
+        app:layout_constraintTop_toBottomOf="@+id/LG" />
+
+    <Button
+        android:id="@+id/NN"
+        android:layout_width="45dp"
+        android:textColor="#F8DCDC"
+        app:backgroundTint="#FA7474"
+        android:layout_height="40dp"
+        android:text="NN"
+        app:layout_constraintEnd_toStartOf="@+id/NE"
+        app:layout_constraintTop_toBottomOf="@+id/LN" />
+
+    <Button
+        android:id="@+id/NE"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#FF3434"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="NE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LE" />
+
+    <Button
+        android:id="@+id/CG"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:textColor="#F8DCDC"
+        app:backgroundTint="#FA7474"
+        android:text="CG"
+        app:layout_constraintEnd_toStartOf="@+id/CN"
+        app:layout_constraintTop_toBottomOf="@+id/NG" />
+
+    <Button
+        android:id="@+id/CN"
+        android:layout_width="45dp"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#FF3434"
+        android:layout_height="40dp"
+        android:text="CN"
+        app:layout_constraintEnd_toStartOf="@+id/CE"
+        app:layout_constraintTop_toBottomOf="@+id/NN" />
+
+    <Button
+        android:id="@+id/CE"
+        android:layout_width="45dp"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#D60404"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="CE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NE" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

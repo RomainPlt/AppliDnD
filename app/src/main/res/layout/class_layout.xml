@@ -120,14 +120,14 @@
 
     <Button
         android:id="@+id/questionButton"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="#BA0303"
         android:layout_width="46dp"
         android:layout_height="45dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="?"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -135,10 +135,11 @@
         android:id="@+id/okButton"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:enabled="false"
+        android:text="@string/ok"
         android:textColor="#FFFFFF"
         app:backgroundTint="#BA0303"
-        android:layout_marginBottom="32dp"
-        android:text="@string/ok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/nextButton"
         app:layout_constraintStart_toEndOf="@+id/prevButton" />

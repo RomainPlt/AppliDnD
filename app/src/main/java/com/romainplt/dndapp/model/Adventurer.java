@@ -2,22 +2,22 @@ package com.romainplt.dndapp.model;
 
 import android.graphics.Color;
 
-public class Advanturer {
+public class Adventurer {
 
     private String name;
     private String player;
-    private Race race;
-    private Classe classe;
+    private Race race; //done
+    private Classe classe;//done
     private God god;
     private int armorClass;
     private int healthPoint;
     private Spell[] spells;
     private int level;
     private int xp;
-    private Description[] description; //Hair skin eyes color, height and weight, age, sex, aligment
+    private Description description; //done //Hair skin eyes color, height and weight, age, sex, aligment
     private Background background;
     private Characteristics characteristics;
-    private Skills[] skills;
+    private Skills skills;
     private Equipment[] equipment;
     private SavingThrows[] savingThrows;
     private Attack[] attacks;
@@ -121,11 +121,11 @@ public class Advanturer {
         this.xp = xp;
     }
 
-    public Description[] getDescription() {
+    public Description getDescription() {
         return description;
     }
 
-    public void setDescription(Description[] description) {
+    public void setDescription(Description description) {
         this.description = description;
     }
 
@@ -180,11 +180,11 @@ public class Advanturer {
 
     }
 
-    public Skills[] getSkills() {
+    public Skills getSkills() {
         return skills;
     }
 
-    public void setSkills(Skills[] skills) {
+    public void setSkills(Skills skills) {
         this.skills = skills;
     }
 
