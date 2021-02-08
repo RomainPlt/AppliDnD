@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -168,8 +167,8 @@ public class ClassFragment extends Fragment {
                     classe.setHealthPointAdjustment(0);
 
                     break;
-                case R.id.radioButton_Illusionist:
-                    classe.setClasseName("Illusionist");
+                case R.id.radioButton_Magician:
+                    classe.setClasseName("Magician");
                     classe.setHealthPointAdjustment(0);
 
                     break;
@@ -239,7 +238,7 @@ public class ClassFragment extends Fragment {
                     classe.setHealthPointAdjustment(0);
 
                     break;
-                case R.id.radioButton_Illusionist:
+                case R.id.radioButton_Magician:
                     classe.setClasseName("Illusionist");
                     classe.setHealthPointAdjustment(0);
 

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageButton
+        android:id="@+id/prevButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="16dp"
+        android:foregroundGravity="center"
+        android:src="@drawable/leftwhite"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
+        android:foregroundGravity="center"
+        android:src="@drawable/rightwhite"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <Button
+        android:id="@+id/quetionButton"
+        android:layout_width="46dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="?"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViexGod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/god"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/godDescription"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:hint="Description"
+        android:imeActionLabel=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/godInput" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/godAlignment"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:hint="Alignment"
+        android:imeActionLabel=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/godDescription" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/godDomain"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:hint="Domain"
+        android:imeActionLabel=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/godAlignment" />
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:enabled="true"
+        android:text="@string/ok"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextButton"
+        app:layout_constraintStart_toEndOf="@+id/prevButton" />
+
+
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/godInput"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:hint="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quetionButton" />
+
+    <Button
+        android:id="@+id/atheistButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Atheist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/godDomain" />
+
+    <Button
+        android:id="@+id/eraseButton"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:text="ERASE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/godDomain" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

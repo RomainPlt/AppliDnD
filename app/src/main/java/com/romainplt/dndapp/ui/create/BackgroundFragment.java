@@ -56,7 +56,7 @@ public class BackgroundFragment extends Fragment {
             public void onClick(View v)
             {
                 FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-                ft.replace(R.id.createCharacterLayout, new RaceFragment());
+                ft.replace(R.id.createCharacterLayout, new GodFragment());
                 ft.commit();
             }
         });

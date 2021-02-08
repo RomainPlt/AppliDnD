@@ -36,10 +36,10 @@
             android:text="Sorcerer" />
 
         <RadioButton
-            android:id="@+id/radioButton_Illusionist"
+            android:id="@+id/radioButton_Magician"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Illusionist" />
+            android:text="Magician" />
 
         <RadioButton
             android:id="@+id/radioButton_Assassin"

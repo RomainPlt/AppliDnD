@@ -5,7 +5,7 @@ public class Classe {
     private String classeName;
     private Characteristics[] adjustment;
     private int healthPointAdjustment;
-    private Skills[] skillsAdjustment;
+    private Skills skillsAdjustment;
     private Attack[] attack;
     private Spell[] spells;
     private Equipment[] beginningEquipment;
@@ -35,13 +35,31 @@ public class Classe {
         this.healthPointAdjustment = healthPointAdjustment;
     }
 
-    public Skills[] getSkillsAdjustment() {
+    public Skills getSkillsAdjustment() {
         return skillsAdjustment;
     }
 
-    public void setSkillsAdjustment(Skills[] skillsAdjustment) {
+    public void setSkillsAdjustment(Skills skillsAdjustment) {
         this.skillsAdjustment = skillsAdjustment;
     }
+    public void whichSkills(Classe classe){
+        switch (classe.getClasseName()){
+            case "Warrior":
+            case "Thief":
+            case "Assassin":
+            case "Barbarian":
+            case "Sorcerer":
+            case "Magician":
+            case "Priest":
+            case "Monk":
+            case "Ranger":
+            case "Druid":
+
+
+        }
+    }
+
+
 
     public Attack[] getAttack() {
         return attack;

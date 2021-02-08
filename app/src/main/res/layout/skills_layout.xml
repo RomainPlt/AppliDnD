@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ImageButton
+        android:id="@+id/prevButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/leftwhite"
+        android:text="@string/previousButton"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/rightwhite"
+        android:text="@string/nextButton"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/questionButton"
+        android:layout_width="46dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="?"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:enabled="false"
+        android:text="@string/ok"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#BA0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextButton"
+        app:layout_constraintStart_toEndOf="@+id/prevButton" />
+
+    <TextView
+        android:id="@+id/textViewSkills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/skills"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/animalHandling"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="animal \nHandling"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acrobatics" />
+
+    <CheckBox
+        android:id="@+id/intimidation"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="intimidation"
+        app:layout_constraintEnd_toStartOf="@+id/persuasion"
+        app:layout_constraintStart_toEndOf="@+id/animalHandling"
+        app:layout_constraintTop_toBottomOf="@+id/insight" />
+
+    <CheckBox
+        android:id="@+id/persuasion"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="persuasion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/performance" />
+
+    <CheckBox
+        android:id="@+id/deception"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="deception"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/athletics" />
+
+    <CheckBox
+        android:id="@+id/survival"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="survival"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stealth" />
+
+    <CheckBox
+        android:id="@+id/athletics"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="athletics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/arcana" />
+
+    <CheckBox
+        android:id="@+id/stealth"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="stealth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleightOfHand" />
+
+    <CheckBox
+        android:id="@+id/perception"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="perception"
+        app:layout_constraintEnd_toStartOf="@+id/survival"
+        app:layout_constraintStart_toEndOf="@+id/history"
+        app:layout_constraintTop_toBottomOf="@+id/nature" />
+
+    <CheckBox
+        android:id="@+id/history"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="history"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deception" />
+
+    <CheckBox
+        android:id="@+id/insight"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="insight"
+        app:layout_constraintEnd_toStartOf="@+id/performance"
+        app:layout_constraintStart_toEndOf="@+id/acrobatics"
+        app:layout_constraintTop_toBottomOf="@+id/questionButton" />
+
+    <CheckBox
+        android:id="@+id/acrobatics"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="acrobatics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionButton" />
+
+    <CheckBox
+        android:id="@+id/performance"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="performance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionButton" />
+
+    <CheckBox
+        android:id="@+id/medicine"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="medicine"
+        app:layout_constraintEnd_toStartOf="@+id/sleightOfHand"
+        app:layout_constraintStart_toEndOf="@+id/athletics"
+        app:layout_constraintTop_toBottomOf="@+id/investigation" />
+
+    <CheckBox
+        android:id="@+id/religion"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="religion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/persuasion" />
+
+    <CheckBox
+        android:id="@+id/sleightOfHand"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="sleight of \nhand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/religion" />
+
+    <CheckBox
+        android:id="@+id/arcana"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="arcana"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animalHandling" />
+
+    <CheckBox
+        android:id="@+id/investigation"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="investigation"
+        app:layout_constraintEnd_toStartOf="@+id/religion"
+        app:layout_constraintStart_toEndOf="@+id/arcana"
+        app:layout_constraintTop_toBottomOf="@+id/intimidation" />
+
+    <CheckBox
+        android:id="@+id/nature"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="nature"
+        app:layout_constraintEnd_toStartOf="@+id/stealth"
+        app:layout_constraintStart_toEndOf="@+id/deception"
+        app:layout_constraintTop_toBottomOf="@+id/medicine" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

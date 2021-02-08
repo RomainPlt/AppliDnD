@@ -22,12 +22,14 @@ import com.romainplt.dndapp.model.Adventurer;
 import com.romainplt.dndapp.model.Background;
 import com.romainplt.dndapp.model.Classe;
 import com.romainplt.dndapp.model.Description;
+import com.romainplt.dndapp.model.God;
 import com.romainplt.dndapp.model.MyViewModel;
 import com.romainplt.dndapp.model.Race;
 
 import java.util.List;
 
-public class CreateCharacter extends AppCompatActivity implements RaceFragment.SendRace, WelcomeLayout.Letsgo, ClassFragment.SendClass, DetailsFragment.SendDescription, BackgroundFragment.SendBackground {
+public class CreateCharacter extends AppCompatActivity implements RaceFragment.SendRace, WelcomeLayout.Letsgo,
+        ClassFragment.SendClass, DetailsFragment.SendDescription, BackgroundFragment.SendBackground, GodFragment.SendGod {
 
     public CreateCharacter(){
         super(R.layout.create_character);
@@ -204,5 +206,21 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
             backgroundView.setTextColor(Color.parseColor("#BA0303"));
             advanturer.setBackground(background);
         }
+    }
+
+    @Override
+    public void sendData(God god) {
+        if (god.getName().equals("")){
+            godView.setText("Atheist");
+            god.setName("Atheist");
+            god.setDescription("Fucking Atheist");
+            god.setDomain("Atheist");
+            god.setAlignment("Atheist");
+        } else {
+            godView.setText(god.getName());
+        }
+        godView.setTextColor(Color.parseColor("#BA0303"));
+        godView.setAllCaps(true);
+        advanturer.setGod(god);
     }
 }
