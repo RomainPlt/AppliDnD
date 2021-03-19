@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -25,11 +26,13 @@ import com.romainplt.dndapp.model.Description;
 import com.romainplt.dndapp.model.God;
 import com.romainplt.dndapp.model.MyViewModel;
 import com.romainplt.dndapp.model.Race;
+import com.romainplt.dndapp.model.Skills;
 
 import java.util.List;
 
 public class CreateCharacter extends AppCompatActivity implements RaceFragment.SendRace, WelcomeLayout.Letsgo,
-        ClassFragment.SendClass, DetailsFragment.SendDescription, BackgroundFragment.SendBackground, GodFragment.SendGod {
+        ClassFragment.SendClass, DetailsFragment.SendDescription, BackgroundFragment.SendBackground, GodFragment.SendGod,
+        SkillsFragment.SendSkills{
 
     public CreateCharacter(){
         super(R.layout.create_character);
@@ -123,6 +126,33 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
 
         });
 
+        skillButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog alertDialog = new AlertDialog.Builder(CreateCharacter.this).create(); //Read Update
+                alertDialog.setTitle(R.string.skills);
+                alertDialog.setMessage("\n"
+                        + "Acrobatics :    " + advanturer.getSkills().getAcrobatics() + " | Animal Handling : " + advanturer.getSkills().getAnimalHandling() + " \n"
+                        + "Arcana :          " + advanturer.getSkills().getArcana() +     " | Athletics : " + advanturer.getSkills().getAthletics() + " \n"
+                        + "Deception :     " + advanturer.getSkills().getDeception() +  " | History : " + advanturer.getSkills().getHistory() + " \n"
+                        + "Insight :          " + advanturer.getSkills().getInsight() +    " | Intimidation : " + advanturer.getSkills().getIntimidation() + " \n"
+                        + "Investigation : " + advanturer.getSkills().getInvestigation() + " | Medicine : " + advanturer.getSkills().getMedicine() + " \n"
+                        + "Nature   :        " + advanturer.getSkills().getNature() + " | Perception : " + advanturer.getSkills().getPerception() + " \n"
+                        + "Performance  :" + advanturer.getSkills().getPerformance() + " | Persuasion : " + advanturer.getSkills().getPersuasion() + " \n"
+                        + "Religion :        " + advanturer.getSkills().getReligion() + " | Sleight of hand : " + advanturer.getSkills().getSleightOfHand() + " \n"
+                        + "Stealth  :        " + advanturer.getSkills().getStealth() + " | Survival : " + advanturer.getSkills().getSurvival() + " \n");
+
+                alertDialog.setButton("OK !", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // here you can add functions
+                    }
+                });
+
+                alertDialog.show();
+
+
+            }
+        });
 
     }
 
@@ -150,8 +180,6 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
 
 
     @Override
@@ -222,5 +250,12 @@ public class CreateCharacter extends AppCompatActivity implements RaceFragment.S
         godView.setTextColor(Color.parseColor("#BA0303"));
         godView.setAllCaps(true);
         advanturer.setGod(god);
+    }
+
+    @Override
+    public void sendData(Skills skills) {
+        skillButton.setTextColor(Color.parseColor("#BA0303"));
+        advanturer.setSkills(skills);
+        skillButton.setEnabled(true);
     }
 }

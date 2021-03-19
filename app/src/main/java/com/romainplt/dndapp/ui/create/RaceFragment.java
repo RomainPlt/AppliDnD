@@ -73,7 +73,7 @@ public class RaceFragment extends Fragment {
             public void onClick(View v)
             {
                 FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-                ft.replace(R.id.createCharacterLayout, new GodFragment());
+                ft.replace(R.id.createCharacterLayout, new SkillsFragment());
                 ft.commit();
             }
         });
